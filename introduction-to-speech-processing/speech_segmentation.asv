@@ -1,0 +1,9 @@
+load ../mcclellan\mcclellan\Data\s5.mat
+load 
+
+%%
+% Oak is strong and also gives shade
+%
+% OW K IH S S T R EN H AX D AO S OW G IH V S SH EY D
+%%
+sound(s5, 8000)
