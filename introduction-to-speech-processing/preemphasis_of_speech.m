@@ -33,6 +33,7 @@ hold off;
 % Alpha has to be negative
 
 % % % % % % % % % Ex2.2 Filter and Conv % % % % % % % % % % % %
+% TODO
 
 load ../mcclellan\mcclellan\Data\s5.mat
 len = length(s5);
@@ -49,16 +50,20 @@ Y2 = conv(s5, h, "same");
 figure;
 subplot(2,1,1);
 plot(n, Y1);
+title('Appling filter() to Signal');
 subplot(2,1,2);
 plot(n, Y2);
+title('Appling conv() to Signal');
 
 % % % % % % % % % Ex2.3 Plotting Preemphasized Signal % % % % % % % % % % 
 
 figure;
 striplot(Y1, Fs, 2000, 100);
+title('Original Signal');
 figure;
 striplot(s5, Fs, 2000, 100);
+title('Preemphasized Signal');
 
-sound(s5, Fs);
-pause(3);
-sound(Y1, Fs);
+% sound(s5, Fs);
+% pause(3);
+% sound(Y1, Fs);
