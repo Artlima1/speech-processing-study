@@ -1,3 +1,6 @@
+% % % % % % % % % % % % %  2.1) Frequency Response and Pole-Zero Plot % % % % % % % % %
+%TODO
+
 Fs = 10000;
 rN = 0.71;
 vowell_AA = [1.6, 2.6, 0.65, 1.6, 2.6, 4, 6.5, 8, 7, 5];
@@ -28,3 +31,11 @@ hold off
 
 figure
 zplane(D_AA, D_AA_lossless);
+
+% % % % % % % % % % % % %  2.2) Finding Model from the System Function % % % % % % % % %
+%TODO
+A1 = 1;
+D = [1, -0.0460, -0.6232, 0.3814, 0.2443, 0.1973, 0.2873, 0.3655, -0.4806, -0.1153, 0.7100];
+
+[r, A] = VtoA(D, A1)
+
