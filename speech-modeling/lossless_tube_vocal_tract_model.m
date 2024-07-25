@@ -1,5 +1,6 @@
 % % % % % % % % % % % % %  2.1) Frequency Response and Pole-Zero Plot % % % % % % % % %
-%TODO
+% TODO - Convert angles of roots to analog frequencies and compare to the
+% formant frequencies expected. Whats the effective length of vocal tract
 
 Fs = 10000;
 rN = 0.71;
@@ -21,20 +22,30 @@ subplot(2,1,1)
 plot(w_AA, 20*log10(abs(V_AA)));
 hold on
 plot(w_AA_lossless, 20*log10(abs(V_AA_lossless)));
+xlabel('Frequency (rad/s)')
+ylabel('Log Magnitude in dB')
+legend('rN = {0.71}', 'rN = 1');
+title("Modelo do Trato Vocal para \a\")
 hold off
 
 subplot(2,1,2)
 plot(w_IY, 20*log10(abs(V_IY)));
 hold on
 plot(w_IY_lossless, 20*log10(abs(V_IY_lossless)));
+xlabel('Frequency (rad/s)')
+ylabel('Log Magnitude in dB')
+legend('rN = {0.71}', 'rN = 1');
+title("Modelo do Trato Vocal para \i\")
 hold off
 
 figure
 zplane(D_AA, D_AA_lossless);
+% A medida em que rN se distancia da unidade, percebe-se que as raízes de
+% D(z) diminuem em módulo, tendendo para o centro no plano z. 
 
 % % % % % % % % % % % % %  2.2) Finding Model from the System Function % % % % % % % % %
-%TODO
-A1 = 1;
+
+A1 = 1.6;
 D = [1, -0.0460, -0.6232, 0.3814, 0.2443, 0.1973, 0.2873, 0.3655, -0.4806, -0.1153, 0.7100];
 
 [r, A] = VtoA(D, A1)

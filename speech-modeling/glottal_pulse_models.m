@@ -1,3 +1,7 @@
+% % % % % % % % % % % % %  1) Comparison of Glottal Pulse Models % % % % % % % % %
+% TODO - Determine analytical relationship between Gflip and G. Show that
+% if signal is maximum-phase, flipping it produces minimum phase
+
 a = 0.91;
 N1 = 45;
 N2 = 5;
