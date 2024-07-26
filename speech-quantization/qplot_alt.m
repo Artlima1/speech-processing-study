@@ -59,4 +59,4 @@ legenda(5) = sprintf("mu-Law %db",nbits-6);
 
 legend(legenda(1),legenda(2),legenda(3),legenda(4),legenda(5));
 xlabel('power of 2 divisor');   ylabel('SNR in dB')
-legend('Location','west');
+legend('Location','east');
