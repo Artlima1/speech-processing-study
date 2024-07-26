@@ -12,6 +12,7 @@ for k = 1:ncases
 end
 
 figure
+subplot(1, 2, 1)
 for k = 1:ncases
     plot(1:NSum+1, gR(k,:))
     hold on
@@ -22,7 +23,7 @@ ylabel('gR[n]')
 title(sprintf('g_R[n] for different N2 values with N1+N2=%d', NSum))
 hold off
 
-figure
+subplot(1, 2, 2)
 for k = 1:ncases
     plot(W(k,:), 20*log10(abs(GR(k,:))))
     hold on

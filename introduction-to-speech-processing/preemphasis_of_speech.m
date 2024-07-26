@@ -10,15 +10,15 @@ a2 = [1 -0.9];
 a3 = [1 -0.98];
 Fs = 8000;
 
-[h1, w1] = freqz(b, a1, 1024, Fs);
-[h2, w2] = freqz(b, a2, 1024, Fs);
-[h3, w3] = freqz(b, a3, 1024, Fs);
+[h1, f1] = freqz(b, a1, 1024, Fs);
+[h2, f2] = freqz(b, a2, 1024, Fs);
+[h3, f3] = freqz(b, a3, 1024, Fs);
 
 figure;
-plot(w1/pi, 20*log10(abs(h1))); 
+plot(f1, 20*log10(abs(h1))); 
 hold on;
-plot(w2/pi, 20*log10(abs(h2)));
-plot(w3/pi, 20*log10(abs(h3)));
+plot(f2, 20*log10(abs(h2)));
+plot(f3, 20*log10(abs(h3)));
 
 title('Frequency Responses for Different Alpha Values');
 xlabel('Frequency (Hz)');
@@ -47,19 +47,23 @@ end
 Y2 = conv(h, s5);
 
 figure;
-subplot(2,1,1);
+subplot(3,1,1);
+plot(s5);
+title('Original Signal');
+subplot(3,1,2);
 plot(Y1);
 title('Appling filter() to Signal');
-subplot(2,1,2);
+subplot(3,1,3);
 plot(Y2(1:len));
 title('Appling conv() to Signal');
 
 % % % % % % % % % Ex2.3 Plotting Preemphasized Signal % % % % % % % % % % 
 
 figure;
+subplot(1,2,1);
 striplot(Y1, Fs, 2000, 100);
 title('Original Signal');
-figure;
+subplot(1,2,2);
 striplot(s5, Fs, 2000, 100);
 title('Preemphasized Signal');
 
