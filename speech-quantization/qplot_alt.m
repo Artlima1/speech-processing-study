@@ -1,12 +1,19 @@
-addpath("mcclellan/mcclellan/Functions/")
-load("mcclellan/mcclellan/Data/s5.mat");
-addpath("speech-quantization/")
+function     qplot_alt(s, nbits, mu, ncases)
+%QPLOT    for plotting dependence of signal-to-noise ratio
+%-----           on decreasing signal level
+%
+%   Usage:   qplot(s, nbits, mu, ncases)
+%
+%             s : input test signal
+%         nbits : number of bits in quantizer
+%            mu : mu-law compression parameter
+%        ncases : number of cases to plot
+%
+%  NOTE: assumes ROUNDING for quantizer
+%        and requires user-written MULINV and SNR
+%
+%  see also MULAW and FXQUANT
 
-
-s=s5;
-nbits=10;
-mu=255; 
-ncases=10;
 
 P = zeros(ncases,5);
 x = s;
@@ -52,4 +59,4 @@ legenda(5) = sprintf("mu-Law %db",nbits-6);
 
 legend(legenda(1),legenda(2),legenda(3),legenda(4),legenda(5));
 xlabel('power of 2 divisor');   ylabel('SNR in dB')
-legend('Location','east');
+legend('Location','west');
