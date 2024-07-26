@@ -1,6 +1,4 @@
 % % % % % % % % % % % % %  2.1) Frequency Response and Pole-Zero Plot % % % % % % % % %
-% TODO - Convert angles of roots to analog frequencies and compare to the
-% formant frequencies expected. Whats the effective length of vocal tract
 
 Fs = 10000;
 rN = 0.71;
